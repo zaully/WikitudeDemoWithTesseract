@@ -7,6 +7,7 @@
 //
 
 #import "TesseractPluginAdaptor.h"
+#import "GPUImage.h"
 
 @implementation TesseractPluginAdaptor
 - (void)frameAvailable: (NSData *)data {
@@ -15,6 +16,7 @@
 
 @interface WDTesseractPluginAdaptorImpl ()
 @property (nonatomic, assign) NSInteger looperIndex;
+@property (nonatomic, strong) GPUImageAdaptiveThresholdFilter *stillImageFilter;
 @end
 
 @implementation WDTesseractPluginAdaptorImpl
@@ -23,7 +25,9 @@
     if (self) {
         self.tesseractPlugin = std::make_shared<TesseractPlugin>("TesseractPlugin", width, height);
         self.tesseractPlugin->set_adaptor(self);
-        self.tesseract = [[G8Tesseract alloc] initWithLanguage:@"eng+fra"];
+        self.stillImageFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
+        self.stillImageFilter.blurRadiusInPixels = 4.0;
+        self.tesseract = [[G8Tesseract alloc] initWithLanguage:@"eng"];
         self.tesseract.engineMode = G8OCREngineModeTesseractCubeCombined;
         self.tesseract.maximumRecognitionTime = 2;
         self.tesseract.delegate = self;
@@ -34,7 +38,7 @@
 
 - (void)frameAvailable: (UIImage *)image {
     if (self.looperIndex == 0) {
-        self.tesseract.image = [image g8_grayScale];
+        self.tesseract.image = image;
         [self.tesseract recognize];
         NSLog(@"%@", [self.tesseract recognizedText]);
 //        NSArray *characterBoxes = [self.tesseract recognizedBlocksByIteratorLevel:G8PageIteratorLevelSymbol];
@@ -55,6 +59,10 @@
      */
     if ([tesseract isEqual:self.tesseract]) {
     }
+}
+
+- (UIImage *)preprocessedImageForTesseract:(G8Tesseract *)tesseract sourceImage:(UIImage *)sourceImage {
+    return [self.stillImageFilter imageByFilteringImage:sourceImage];
 }
 
 @end
