@@ -29,11 +29,6 @@ NSString * const WT_LICENSE_CODE = @"GNyIbqHCsfm1/GElB9Cna39EuFJtLkNxyTSEzroYh1p
     self.architectView.delegate = self;
 }
 
-- (void)setupTesseract {
-    G8Tesseract *tesseract = [[G8Tesseract alloc] initWithLanguage:@"eng+fra"];
-    tesseract.delegate = self;
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     NSURL *absoluteURL = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];

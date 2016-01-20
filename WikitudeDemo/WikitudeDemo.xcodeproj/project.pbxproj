@@ -15,6 +15,7 @@
 		61672EC21C4DDD9200987CC9 /* ade.js in Resources */ = {isa = PBXBuildFile; fileRef = 61672EC11C4DDD9200987CC9 /* ade.js */; };
 		61672EC51C4DDDE500987CC9 /* ocr.js in Resources */ = {isa = PBXBuildFile; fileRef = 61672EC41C4DDDE500987CC9 /* ocr.js */; };
 		618292DA1C4DF16F0080B1FC /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 618292D91C4DF16F0080B1FC /* default.css */; };
+		619662A01C4F3FCC00D3527B /* ImageConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6196629F1C4F3FCC00D3527B /* ImageConversion.m */; };
 		61A25E691C4C090C00E08D9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A25E681C4C090C00E08D9B /* main.m */; };
 		61A25E6C1C4C090C00E08D9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A25E6B1C4C090C00E08D9B /* AppDelegate.m */; };
 		61A25E751C4C090C00E08D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A25E731C4C090C00E08D9B /* Main.storyboard */; };
@@ -69,6 +70,8 @@
 		61672EC11C4DDD9200987CC9 /* ade.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ade.js; sourceTree = "<group>"; };
 		61672EC41C4DDDE500987CC9 /* ocr.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ocr.js; sourceTree = "<group>"; };
 		618292D91C4DF16F0080B1FC /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
+		6196629E1C4F3FCC00D3527B /* ImageConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageConversion.h; sourceTree = "<group>"; };
+		6196629F1C4F3FCC00D3527B /* ImageConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageConversion.m; sourceTree = "<group>"; };
 		61A25E641C4C090C00E08D9B /* WikitudeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikitudeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A25E681C4C090C00E08D9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61A25E6A1C4C090C00E08D9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				61CB2D8C1C4E054D008F0691 /* tesseract_plugin.h */,
 				61CB2D911C4EFDD4008F0691 /* TesseractPluginAdaptor.h */,
 				61CB2D921C4EFDD4008F0691 /* TesseractPluginAdaptor.mm */,
+				6196629E1C4F3FCC00D3527B /* ImageConversion.h */,
+				6196629F1C4F3FCC00D3527B /* ImageConversion.m */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				61CB2D901C4E0AAF008F0691 /* WDAugmentedRealityViewController+Plugin.mm in Sources */,
 				61CB2D8D1C4E054D008F0691 /* tesseract_plugin.mm in Sources */,
 				61CB2D931C4EFDD4008F0691 /* TesseractPluginAdaptor.mm in Sources */,
+				619662A01C4F3FCC00D3527B /* ImageConversion.m in Sources */,
 				61672EBD1C4DBE0D00987CC9 /* WDAugmentedRealityViewController.m in Sources */,
 				61A25E691C4C090C00E08D9B /* main.m in Sources */,
 			);

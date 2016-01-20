@@ -19,7 +19,7 @@ static const char *kWDAugmentedRealityViewController_AssociatedTesseractPluginAd
 @implementation WDAugmentedRealityViewController (Plugin)
 
 - (void)registerPlugin {
-    TesseractPluginAdaptor *adaptor = [[TesseractPluginAdaptor alloc] initWithFrameWidth:50 andHeight:50];
+    WDTesseractPluginAdaptorImpl *adaptor = [[WDTesseractPluginAdaptorImpl alloc] initWithFrameWidth:50 andHeight:50];
     [self.architectView registerPlugin:adaptor.tesseractPlugin];
     objc_setAssociatedObject(self, kWDAugmentedRealityViewController_AssociatedTesseractPluginAdaptorKey, adaptor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
